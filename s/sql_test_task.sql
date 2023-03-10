@@ -48,7 +48,7 @@ FROM
 	FROM 
 	    history 
 	WHERE 
-		history.started_at <= strftime('%s', '2021-08-31') * 1000 --DATETIME меняем на дату в прошлом
+		history.started_at <= strftime('%s', DATETIME()) * 1000 --DATETIME меняем на дату в прошлом
 	GROUP BY 
 	    history.issue_key
 	) t1
